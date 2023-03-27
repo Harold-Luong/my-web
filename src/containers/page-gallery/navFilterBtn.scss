@@ -1,0 +1,32 @@
+.toolbar {
+  .btn-filter {
+    font-family: Lato;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: 0.5rem 1rem !important;
+    margin: 0;
+    height: auto;
+    border: 1px solid rgba(40, 87, 2, 0.45);
+    margin: 5px;
+    vertical-align: middle;
+    appearance: none;
+    background-color: unset !important;
+    color: #555;
+  }
+  .btn-filter:hover {
+    border: 1px solid rgba(255, 6, 6, 0.45);
+    color: rgba(255, 6, 6, 0.671) !important;
+    box-shadow: rgba(255, 6, 6, 0.45) 0px 5px 15px !important;
+  }
+
+  .btn-active {
+    pointer-events: none !important;
+    box-shadow: rgba(40, 87, 2, 0.45) 0px 5px 15px;
+    border: 1px solid rgba(40, 87, 2, 0.45);
+    color: rgba(40, 87, 2);
+  }
+}
