@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import filterBtnReducer from "./features/counter/filterBtnSlice";
+
+import gallerySliceReducer from "./features/gallery/gallerySlice";
 export default configureStore({
   reducer: {
-    filter: filterBtnReducer,
+    page: gallerySliceReducer,
   },
 });

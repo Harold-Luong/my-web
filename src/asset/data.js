@@ -10,7 +10,7 @@ import img10 from "../asset/bg-img/10.jpg";
 import img11 from "../asset/bg-img/11.jpg";
 import img12 from "../asset/bg-img/12.jpg";
 
-const imageGallery = [
+const imageGalleryData = [
   {
     id: 1,
     location: "Sài Gòn",
@@ -124,5 +124,9 @@ const imageGallery = [
     src: img10,
   },
 ];
-
-export default imageGallery;
+const itemsPerPage = 4;
+const totalPages = Array.from(
+  { length: Math.ceil(imageGalleryData.length / itemsPerPage) },
+  (_, i) => i + 1
+);
+export { imageGalleryData, itemsPerPage, totalPages };

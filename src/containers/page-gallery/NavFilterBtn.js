@@ -1,31 +1,52 @@
-import React, { useMemo, useState, useEffect, useCallback } from "react";
-import imageGallery from "../../asset/data";
+import React, { useMemo, useState } from "react";
+import { imageGalleryData } from "../../asset/data";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
-import { setFilter } from "../../features/counter/filterBtnSlice";
+import { showImgByFilter } from "../../features/gallery/gallerySlice";
 import "./navFilterBtn.scss";
 
 const NavFilterBtn = () => {
-  const filter = useSelector((state) => state.filter.value);
+  const [filter, setFilter] = useState("All");
+  const pageReducer = useSelector((state) => state.page);
   const dispatch = useDispatch();
-
-  const imageGallerys = imageGallery;
+  const listImgGallery = imageGalleryData;
   const uniqueLocationsArray = useMemo(() => {
     const uniqueLocationsSet = new Set(["All"]);
     return [
       ...new Set([
         ...uniqueLocationsSet,
-        ...imageGallerys.map((item) => item.location),
+        ...listImgGallery.map((item) => item.location),
       ]),
     ];
-  }, [imageGallerys]);
+  }, [listImgGallery]);
 
   const handleClickFilterButton = (event) => {
-    dispatch(setFilter(event.target.value));
+    const btnValueFilter = event.target.value;
+    if (btnValueFilter === "All") {
+      dispatch(
+        showImgByFilter({
+          ...pageReducer,
+          currentPage: 1,
+          imageGallery: listImgGallery,
+        })
+      );
+    } else {
+      const imgFilter = imageGalleryData.filter(
+        (img) => img.location === event.target.value
+      );
+      dispatch(
+        showImgByFilter({
+          ...pageReducer,
+          currentPage: 1,
+          imageGallery: imgFilter,
+        })
+      );
+    }
+    setFilter(btnValueFilter);
   };
-
+  console.log("nav");
   return (
-    <>
+    <React.Fragment>
       <div className="toolbar">
         {uniqueLocationsArray.map((location, index) => (
           <Button
@@ -38,7 +59,7 @@ const NavFilterBtn = () => {
           </Button>
         ))}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 export default NavFilterBtn;
