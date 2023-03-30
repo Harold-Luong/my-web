@@ -1,23 +1,18 @@
 import React, { useMemo, useState } from "react";
 import { imageGalleryData } from "../../asset/data";
 import Button from "react-bootstrap/Button";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { showImgByFilter } from "../../features/gallery/gallerySlice";
 import "./navFilterBtn.scss";
 
 const NavFilterBtn = () => {
   const [filter, setFilter] = useState("All");
-  const pageReducer = useSelector((state) => state.page);
   const dispatch = useDispatch();
-  const listImgGallery = imageGalleryData;
+  const listImgGallery = useMemo(() => imageGalleryData, []);
   const uniqueLocationsArray = useMemo(() => {
     const uniqueLocationsSet = new Set(["All"]);
-    return [
-      ...new Set([
-        ...uniqueLocationsSet,
-        ...listImgGallery.map((item) => item.location),
-      ]),
-    ];
+    listImgGallery.forEach((item) => uniqueLocationsSet.add(item.location));
+    return Array.from(uniqueLocationsSet);
   }, [listImgGallery]);
 
   const handleClickFilterButton = (event) => {
@@ -25,41 +20,36 @@ const NavFilterBtn = () => {
     if (btnValueFilter === "All") {
       dispatch(
         showImgByFilter({
-          ...pageReducer,
-          currentPage: 1,
           imageGallery: listImgGallery,
         })
       );
     } else {
-      const imgFilter = imageGalleryData.filter(
+      const imgFilter = listImgGallery.filter(
         (img) => img.location === event.target.value
       );
+
       dispatch(
         showImgByFilter({
-          ...pageReducer,
-          currentPage: 1,
           imageGallery: imgFilter,
         })
       );
     }
     setFilter(btnValueFilter);
   };
-  console.log("nav");
   return (
-    <React.Fragment>
-      <div className="toolbar">
-        {uniqueLocationsArray.map((location, index) => (
-          <Button
-            key={index}
-            className={`btn-filter${filter === location ? " btn-active" : ""}`}
-            value={location}
-            onClick={handleClickFilterButton}
-          >
-            {location}
-          </Button>
-        ))}
-      </div>
-    </React.Fragment>
+    <div className="toolbar">
+      {uniqueLocationsArray.map((location, index) => (
+        <Button
+          key={index}
+          className={`btn-filter${filter === location ? " btn-active" : ""}`}
+          value={location}
+          onClick={handleClickFilterButton}
+        >
+          {location}
+        </Button>
+      ))}
+    </div>
   );
 };
+
 export default NavFilterBtn;

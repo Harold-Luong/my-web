@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Pagination } from "react-bootstrap";
-
+import "./paginationbar.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { showImgByPageNumber } from "../../features/gallery/gallerySlice";
 
@@ -9,26 +9,20 @@ const PaginationBar = () => {
   const pageReducer = useSelector((state) => state.page);
   const currentPage = pageReducer.currentPage;
   const page = pageReducer.totalPage;
-  const [totalPage, settotalPage] = useState(page);
-  useEffect(() => {
-    if (page !== totalPage) {
-      settotalPage(page);
-    }
-  }, [page, totalPage]);
-
   const handlePageChange = (page) => {
-    dispatch(showImgByPageNumber({ ...pageReducer, currentPage: page }));
+    dispatch(showImgByPageNumber({ currentPage: page }));
   };
-  console.log("pag");
+
   return (
-    <div className="d-flex justify-content-center mt-4">
+    <div className="d-flex justify-content-center mt-4 pagination">
       <Pagination>
         <Pagination.Prev
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
         />
-        {totalPage.map((pageNumber) => (
+        {page.map((pageNumber) => (
           <Pagination.Item
+            disabled={currentPage === pageNumber}
             key={pageNumber}
             active={pageNumber === currentPage}
             onClick={() => handlePageChange(pageNumber)}
@@ -38,7 +32,7 @@ const PaginationBar = () => {
         ))}
 
         <Pagination.Next
-          disabled={currentPage === totalPage.length}
+          disabled={currentPage === page.length}
           onClick={() => handlePageChange(currentPage + 1)}
         />
       </Pagination>
