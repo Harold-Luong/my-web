@@ -3,10 +3,6 @@
   --border-radius: 5px;
 }
 
-.container {
-  padding: 10px 5%;
-}
-
 .heading-text {
   margin-bottom: 2rem;
   font-size: var(--heading-font-size);
@@ -95,7 +91,6 @@
 @media (max-width: 1228px) {
   .ul-image-gallery {
     display: block;
-
     list-style: none;
   }
 }

@@ -9,7 +9,6 @@ const pageSlice = createSlice({
     currentPage: 1,
     itemsPerPage: itemsPerPage,
     paginationImg: imageGalleryData,
-    show: true,
   },
 
   reducers: {

@@ -1,0 +1,8 @@
+@media (max-width: 1228px) {
+  .modal.show .modal-dialog {
+    top: 25%;
+    .modal-footer {
+      display: none;
+    }
+  }
+}

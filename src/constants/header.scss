@@ -1,0 +1,41 @@
+.nav-header {
+  margin-top: 1rem;
+
+  .active {
+    font-weight: bold;
+    color: red;
+    pointer-events: none !important;
+    box-shadow: rgba(40, 87, 2, 0.45) 0px 5px 15px;
+    border: 1px solid rgba(40, 87, 2, 0.45);
+  }
+
+  .nav-item {
+    margin: 5px;
+  }
+  a {
+    font-weight: 600;
+    width: 100%;
+    text-decoration: none;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: 0.5rem 1rem !important;
+    margin: 0;
+    height: auto;
+    border: 1px solid rgba(40, 87, 2, 0.45);
+    vertical-align: middle;
+    appearance: none;
+    background-color: unset !important;
+    color: #555;
+    transition: all 400ms ease-in-out;
+    &:hover {
+      border: 1px solid rgba(255, 6, 6, 0.45);
+      color: rgba(255, 6, 6, 0.671) !important;
+      box-shadow: rgba(255, 6, 6, 0.45) 0px 5px 15px !important;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+//ex: Tây Ninh => tayninh
 function convertLocationToSlugTag(location) {
   return location
     .toLowerCase()

@@ -26,6 +26,8 @@ import img25 from "../asset/bg-img/28.jpg";
 import img26 from "../asset/bg-img/26.jpg";
 import img27 from "../asset/bg-img/27.jpg";
 
+const itemsPerPage = 20;
+
 const imageGalleryData = [
   {
     id: 1,
@@ -218,7 +220,7 @@ const imageGalleryData = [
     src: img27,
   },
 ];
-const itemsPerPage = 8;
+
 const totalPages = Array.from(
   { length: Math.ceil(imageGalleryData.length / itemsPerPage) },
   (_, i) => i + 1

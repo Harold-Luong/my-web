@@ -1,32 +1,43 @@
 .toolbar {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   .btn-filter {
-    font-family: Lato;
-    font-size: 1rem;
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
-    line-height: normal;
-    padding: 0.5rem 1rem !important;
-    margin: 0;
-    height: auto;
-    border: 1px solid rgba(40, 87, 2, 0.45);
-    margin: 5px;
-    vertical-align: middle;
-    appearance: none;
-    background-color: unset !important;
-    color: #555;
-  }
-  .btn-filter:hover {
-    border: 1px solid rgba(255, 6, 6, 0.45);
-    color: rgba(255, 6, 6, 0.671) !important;
-    box-shadow: rgba(255, 6, 6, 0.45) 0px 5px 15px !important;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 0;
+    margin: 0 25px;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
   }
 
-  .btn-active {
+  .btn-filter::after {
     pointer-events: none !important;
-    box-shadow: rgba(40, 87, 2, 0.45) 0px 5px 15px;
-    border: 1px solid rgba(40, 87, 2, 0.45);
-    color: rgba(40, 87, 2);
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #fc6060;
+    content: "";
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .btn-active::after {
+    width: 100%;
+  }
+}
+@media (max-width: 1228px) {
+  .btn-filter {
+    font-size: 14px !important;
   }
 }

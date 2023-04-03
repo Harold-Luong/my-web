@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { imageGalleryData } from "../../asset/data";
-import Button from "react-bootstrap/Button";
+
 import { useDispatch } from "react-redux";
 import { showImgByFilter } from "../../features/gallery/gallerySlice";
 import "./navFilterBtn.scss";
@@ -9,6 +9,7 @@ const NavFilterBtn = () => {
   const [filter, setFilter] = useState("All");
   const dispatch = useDispatch();
   const listImgGallery = useMemo(() => imageGalleryData, []);
+  //tạo 1 mảng location không trùng nhau
   const uniqueLocationsArray = useMemo(() => {
     const uniqueLocationsSet = new Set(["All"]);
     listImgGallery.forEach((item) => uniqueLocationsSet.add(item.location));
@@ -39,14 +40,14 @@ const NavFilterBtn = () => {
   return (
     <div className="toolbar">
       {uniqueLocationsArray.map((location, index) => (
-        <Button
+        <button
           key={index}
           className={`btn-filter${filter === location ? " btn-active" : ""}`}
           value={location}
           onClick={handleClickFilterButton}
         >
           {location}
-        </Button>
+        </button>
       ))}
     </div>
   );

@@ -5,17 +5,17 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import PaginationBar from "../containers/page-gallery/PaginationBar";
 
-const PageGallery = () => {
+const GalleryPage = () => {
   return (
     <Container>
       <Row>
         <NavFilterBtn />
       </Row>
-      <hr></hr>
+
       <Row>
         <ListImgGallery />
       </Row>
-      <hr></hr>
+
       <Row>
         <PaginationBar />
       </Row>
@@ -23,4 +23,4 @@ const PageGallery = () => {
   );
 };
 
-export default PageGallery;
+export default GalleryPage;
