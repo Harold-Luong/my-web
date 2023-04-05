@@ -1,0 +1,10 @@
+.nav {
+  .active {
+    font-weight: bold;
+    color: red;
+    pointer-events: none !important;
+  }
+}
+.show {
+  display: inline-block;
+}

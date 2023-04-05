@@ -7,15 +7,16 @@ import { useSelector } from "react-redux";
 import ShowModal from "./ShowModal";
 
 const ListImgGallery = () => {
-  const imageGallery = useSelector((state) => state.page.imageGallery);
   const [modalShow, setModalShow] = useState(false);
   const [dataModal, setdataModal] = useState([]);
-
   const handleClose = () => setModalShow(false);
   const handleShow = (data) => {
     setdataModal(data);
     setModalShow(true);
   };
+  const imageGallery = useSelector((state) => state.page.imageGallery);
+
+  const setShow = useSelector((state) => state.page.show);
 
   return (
     <Container>
@@ -27,7 +28,7 @@ const ListImgGallery = () => {
       <Row>
         <ul className="ul-image-gallery">
           {imageGallery.map((item, key) => (
-            <li key={key} className={`li-img show `}>
+            <li key={key} className={`li-img ${setShow ? "show" : ""} `}>
               <img src={item.src} alt={item.location} />
               <div className="overlay" onClick={() => handleShow(item)}>
                 <span>{item.location}</span>

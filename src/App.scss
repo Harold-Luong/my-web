@@ -1,5 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
+/* ẩn thanh scrollbar trên Chrome và Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+/* ẩn thanh scrollbar trên Firefox */
+::-moz-scrollbar {
+  display: none;
+}
+
 body {
+  /* cho phép cuộn trang */
+  overflow-y: scroll;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -7,6 +18,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(194, 204, 204, 0.397);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+  }
 }
 
 code {

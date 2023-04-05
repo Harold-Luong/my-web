@@ -2,7 +2,10 @@ import React from "react";
 import { Pagination } from "react-bootstrap";
 import "./paginationbar.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { showImgByPageNumber } from "../../features/gallery/gallerySlice";
+import {
+  showScale,
+  showImgByPageNumberAsync,
+} from "../../features/gallery/gallerySlice";
 
 const PaginationBar = () => {
   const dispatch = useDispatch();
@@ -10,7 +13,8 @@ const PaginationBar = () => {
   const currentPage = pageReducer.currentPage;
   const page = pageReducer.totalPage;
   const handlePageChange = (page) => {
-    dispatch(showImgByPageNumber({ currentPage: page }));
+    dispatch(showScale(false));
+    dispatch(showImgByPageNumberAsync({ currentPage: page }));
   };
 
   return (

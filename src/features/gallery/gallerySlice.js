@@ -9,6 +9,8 @@ const pageSlice = createSlice({
     currentPage: 1,
     itemsPerPage: itemsPerPage,
     paginationImg: imageGalleryData,
+    show: true,
+    filter: "All",
   },
 
   reducers: {
@@ -31,10 +33,30 @@ const pageSlice = createSlice({
       state.imageGallery = pageImg.slice(indexOfFirstItem, indexOfLastItem);
       state.currentPage = choosenPage;
     },
-    showScale: (state, action) => {},
+    showScale: (state, action) => {
+      state.show = action.payload;
+    },
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
   },
 });
+const delay = () => new Promise((resolve) => setTimeout(resolve, 400));
 
-export const { showImgByFilter, showImgByPageNumber, showScale } =
+export const showImgByFilterAsync = (data) => async (dispatch) => {
+  dispatch(showScale(false));
+  await delay();
+  dispatch(showImgByFilter(data));
+  dispatch(showScale(true));
+};
+
+export const showImgByPageNumberAsync = (data) => async (dispatch) => {
+  dispatch(showScale(false));
+  await delay();
+  dispatch(showImgByPageNumber(data));
+  dispatch(showScale(true));
+};
+
+export const { showImgByFilter, showImgByPageNumber, showScale, setFilter } =
   pageSlice.actions;
 export default pageSlice.reducer;

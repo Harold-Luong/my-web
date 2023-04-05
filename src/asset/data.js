@@ -26,7 +26,7 @@ import img25 from "../asset/bg-img/28.jpg";
 import img26 from "../asset/bg-img/26.jpg";
 import img27 from "../asset/bg-img/27.jpg";
 
-const itemsPerPage = 20;
+const itemsPerPage = 10;
 
 const imageGalleryData = [
   {

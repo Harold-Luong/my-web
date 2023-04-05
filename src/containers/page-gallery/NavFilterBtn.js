@@ -1,14 +1,17 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { imageGalleryData } from "../../asset/data";
 
-import { useDispatch } from "react-redux";
-import { showImgByFilter } from "../../features/gallery/gallerySlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setFilter,
+  showImgByFilterAsync,
+} from "../../features/gallery/gallerySlice";
 import "./navFilterBtn.scss";
 
 const NavFilterBtn = () => {
-  const [filter, setFilter] = useState("All");
+  const filter = useSelector((state) => state.page.filter);
   const dispatch = useDispatch();
-  const listImgGallery = useMemo(() => imageGalleryData, []);
+  const listImgGallery = imageGalleryData;
   //tạo 1 mảng location không trùng nhau
   const uniqueLocationsArray = useMemo(() => {
     const uniqueLocationsSet = new Set(["All"]);
@@ -19,8 +22,9 @@ const NavFilterBtn = () => {
   const handleClickFilterButton = (event) => {
     const btnValueFilter = event.target.value;
     if (btnValueFilter === "All") {
+      dispatch(setFilter(btnValueFilter));
       dispatch(
-        showImgByFilter({
+        showImgByFilterAsync({
           imageGallery: listImgGallery,
         })
       );
@@ -28,15 +32,15 @@ const NavFilterBtn = () => {
       const imgFilter = listImgGallery.filter(
         (img) => img.location === event.target.value
       );
-
+      dispatch(setFilter(btnValueFilter));
       dispatch(
-        showImgByFilter({
+        showImgByFilterAsync({
           imageGallery: imgFilter,
         })
       );
     }
-    setFilter(btnValueFilter);
   };
+  console.log(filter);
   return (
     <div className="toolbar">
       {uniqueLocationsArray.map((location, index) => (

@@ -1,0 +1,58 @@
+.contact {
+  .bi {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  .contact-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    h2 {
+      font-size: 56px;
+      text-align: left;
+    }
+  }
+
+  .contact-info {
+    margin-bottom: 20px;
+    text-align: left;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    p {
+      margin-bottom: 5px;
+      line-height: 1.9;
+      color: #636363;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    a,
+    p:last-child {
+      font-size: 20px;
+      color: #252525;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .ggmap {
+    height: 50vh;
+    margin: 3px;
+    width: 100%;
+    animation: fadeInAnimation ease 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

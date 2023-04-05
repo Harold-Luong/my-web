@@ -27,6 +27,7 @@
 .ul-image-gallery li {
   flex: auto;
   height: 200px;
+  // width: 200px;
   cursor: pointer;
   position: relative;
   border-radius: var(--border-radius);
@@ -73,14 +74,17 @@
 }
 
 .li-img {
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 280ms ease;
-  transition: all 280ms ease;
+  // -webkit-transform: scale(0);
+  // transform: scale(0);
+  opacity: 0;
+  // -webkit-transition: all 450ms ease;
+  transition: all 450ms ease;
+  opacity: 0;
 }
 
 .show {
-  transform: scale(1);
+  // transform: scale(1);
+  opacity: 1;
 }
 
 @media (min-width: 1228px) {
