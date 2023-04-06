@@ -19,11 +19,11 @@ const ListImgGallery = () => {
   const setShow = useSelector((state) => state.page.show);
 
   return (
-    <Container>
+    <Container className="list-img">
       <Row>
-        <h2 className="heading-text">
+        <h1 className="heading-text">
           My <span>image gallery</span>
-        </h2>
+        </h1>
       </Row>
       <Row>
         <ul className="ul-image-gallery">

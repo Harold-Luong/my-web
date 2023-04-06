@@ -14,7 +14,7 @@ const ContactPage = () => {
         <Col xs={12} md={6}>
           <Row>
             <Col xs={12} md={12}>
-              <Row className="contact-info">
+              {/* <Row className="contact-info">
                 <Col xs={12} md={6}>
                   <p>Social</p>
                   <a href="https://www.facebook.com/ductrong.ln/">
@@ -56,7 +56,7 @@ const ContactPage = () => {
                     </svg>
                   </a>
                 </Col>
-              </Row>
+              </Row> */}
             </Col>
           </Row>
           <Row>
@@ -64,14 +64,16 @@ const ContactPage = () => {
               <Row className="contact-info">
                 <p>Email</p>
                 <a href="mailto:trongluong337@gmail.com">
-                  trongluong337@gmail.com
+                  <h5>trongluong337@gmail.com</h5>
                 </a>
               </Row>
             </Col>
             <Col xs={12} md={6}>
               <Row className="contact-info">
                 <p>Call Us</p>
-                <a href="tel:+84947787904">+84 94 7787 904</a>
+                <a href="tel:+84947787904">
+                  <h5>+84 94 7787 904</h5>
+                </a>
               </Row>
             </Col>
           </Row>
@@ -79,22 +81,23 @@ const ContactPage = () => {
             <Col xs={12} md={12}>
               <Row className="contact-info">
                 <p>Visit Us</p>
-                <p>174/35 Nguyen Tu Gian, GoVap dis, HCM city</p>
+                <h5>174/35 Nguyen Tu Gian, GoVap, HCM City</h5>
               </Row>
             </Col>
           </Row>
         </Col>
       </Row>
+      <hr />
+      <br />
 
-      <Row className="ggmap">
-        <iframe
-          title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62705.01268105083!2d106.6765866!3d10.8064645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752977599a5ae1%3A0x2dd5ce4cd2e33d7b!2zMTc0IMSQLiBOZ3V54buFbiBUxrAgR2nhuqNuLCBQaMaw4budbmcgMTIsIEfDsiBW4bqlcCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1680584283863!5m2!1svi!2s"
-          style={{ border: "0" }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </Row>
+      <iframe
+        className="ggmap"
+        title="Google Map"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62705.01268105083!2d106.6765866!3d10.8064645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752977599a5ae1%3A0x2dd5ce4cd2e33d7b!2zMTc0IMSQLiBOZ3V54buFbiBUxrAgR2nhuqNuLCBQaMaw4budbmcgMTIsIEfDsiBW4bqlcCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1680584283863!5m2!1svi!2s"
+        style={{ border: "solid 1px" }}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </Container>
   );
 };
