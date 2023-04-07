@@ -40,7 +40,7 @@ const NavFilterBtn = () => {
       );
     }
   };
-  console.log(filter);
+
   return (
     <div className="toolbar">
       {uniqueLocationsArray.map((location, index) => (

@@ -1,20 +1,22 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./contactPage.scss";
-const ContactPage = () => {
+const ContactPage = ({ themeBg }) => {
   return (
-    <Container className="contact">
+    <Container className="contact mgTop">
       <Row>
-        <Col xs={12} md={6} className="contact-title  ">
+        <Col xs={12} md={5} className="contact-title">
           <h2>
             Let’s Work <br />
             Together
           </h2>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={7}>
           <Row>
             <Col xs={12} md={12}>
-              {/* <Row className="contact-info">
+              <br />
+              <Row className="contact-info">
+                <h3>Contact me via: </h3>
                 <Col xs={12} md={6}>
                   <p>Social</p>
                   <a href="https://www.facebook.com/ductrong.ln/">
@@ -22,7 +24,9 @@ const ContactPage = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
-                      fill="currentColor"
+                      fill={
+                        !themeBg ? "currentColor" : "rgba(255, 255, 255, 0.55)"
+                      }
                       className="bi bi-facebook"
                       viewBox="0 0 16 16"
                     >
@@ -35,7 +39,9 @@ const ContactPage = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
-                      fill="currentColor"
+                      fill={
+                        !themeBg ? "currentColor" : "rgba(255, 255, 255, 0.55)"
+                      }
                       className="bi bi-github"
                       viewBox="0 0 16 16"
                     >
@@ -48,7 +54,9 @@ const ContactPage = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
-                      fill="currentColor"
+                      fill={
+                        !themeBg ? "currentColor" : "rgba(255, 255, 255, 0.55)"
+                      }
                       className="bi bi-linkedin"
                       viewBox="0 0 16 16"
                     >
@@ -56,11 +64,11 @@ const ContactPage = () => {
                     </svg>
                   </a>
                 </Col>
-              </Row> */}
+              </Row>
             </Col>
           </Row>
           <Row>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={12} lg={6}>
               <Row className="contact-info">
                 <p>Email</p>
                 <a href="mailto:trongluong337@gmail.com">
@@ -68,11 +76,11 @@ const ContactPage = () => {
                 </a>
               </Row>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={12} lg={6}>
               <Row className="contact-info">
-                <p>Call Us</p>
+                <p>Phone</p>
                 <a href="tel:+84947787904">
-                  <h5>+84 94 7787 904</h5>
+                  <h5>+84 947787904</h5>
                 </a>
               </Row>
             </Col>
@@ -80,7 +88,7 @@ const ContactPage = () => {
           <Row>
             <Col xs={12} md={12}>
               <Row className="contact-info">
-                <p>Visit Us</p>
+                <p>Address</p>
                 <h5>174/35 Nguyen Tu Gian, GoVap, HCM City</h5>
               </Row>
             </Col>
@@ -89,7 +97,6 @@ const ContactPage = () => {
       </Row>
       <hr />
       <br />
-
       <iframe
         className="ggmap"
         title="Google Map"

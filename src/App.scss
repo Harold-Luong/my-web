@@ -17,7 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(194, 204, 204, 0.397);
+
   h1,
   h2,
   h3,
@@ -32,4 +32,55 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.bg-light {
+  background-color: rgba(194, 204, 204, 0.397);
+  .pagination {
+    --bs-pagination-focus-box-shadow: none;
+
+    .page-item.active .page-link {
+      box-shadow: rgba(40, 87, 2, 0.45) 0px 5px 15px !important;
+      border: 1px solid rgba(40, 87, 2, 0.45) !important;
+      color: rgba(40, 87, 2) !important;
+      background-color: rgba(255, 255, 255, 0.55) !important;
+    }
+  }
+}
+.bg-dark {
+  $colorDarkText: rgba(255, 255, 255, 0.55) !important;
+  $colorWhite: white !important;
+  hr {
+    color: $colorDarkText;
+  }
+
+  p,
+  h1,
+  h2,
+  h4,
+  h5,
+  h6,
+  button,
+  span {
+    color: $colorDarkText;
+  }
+  h3 {
+    color: $colorWhite;
+  }
+  .btn-active {
+    color: $colorWhite;
+  }
+  .pagination {
+    --bs-pagination-bg: none;
+    --bs-pagination-disabled-bg: none;
+    --bs-pagination-color: rgba(40, 87, 2) !important;
+    --bs-pagination-focus-box-shadow: none;
+    .page-item.active .page-link {
+      color: $colorWhite;
+      background-color: rgba(255, 255, 255, 0.55) !important;
+    }
+  }
+}
+.mgTop {
+  margin-top: 61.88px;
 }

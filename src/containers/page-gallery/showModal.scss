@@ -6,3 +6,9 @@
     }
   }
 }
+.modal.show .modal-dialog {
+  top: 15%;
+  .modal-footer {
+    display: none;
+  }
+}

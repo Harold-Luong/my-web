@@ -11,6 +11,7 @@ const pageSlice = createSlice({
     paginationImg: imageGalleryData,
     show: true,
     filter: "All",
+    theme: false, //light
   },
 
   reducers: {
@@ -39,6 +40,9 @@ const pageSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
+    setThemeBg: (state, action) => {
+      state.theme = action.payload;
+    },
   },
 });
 const delay = () => new Promise((resolve) => setTimeout(resolve, 400));
@@ -57,6 +61,11 @@ export const showImgByPageNumberAsync = (data) => async (dispatch) => {
   dispatch(showScale(true));
 };
 
-export const { showImgByFilter, showImgByPageNumber, showScale, setFilter } =
-  pageSlice.actions;
+export const {
+  showImgByFilter,
+  showImgByPageNumber,
+  showScale,
+  setFilter,
+  setThemeBg,
+} = pageSlice.actions;
 export default pageSlice.reducer;

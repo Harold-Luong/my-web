@@ -7,17 +7,21 @@ import "./navBar.scss";
 import { useLocation } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { setThemeBg } from "../features/gallery/gallerySlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavBar = () => {
-  const [theme, setTheme] = useState(false);
+  const themeBg = useSelector((state) => state.page.theme);
+  const [theme, setTheme] = useState(themeBg);
+  const dispatch = useDispatch();
   const handleTheme = () => {
     setTheme(!theme);
+    dispatch(setThemeBg(!theme));
   };
 
   const location = useLocation();
   const currentPath = location.pathname;
   const currentPage = currentPath.substring(1);
-  console.log(currentPage); // In ra tên trang hiện tại
 
   return (
     <Navbar
@@ -26,6 +30,7 @@ const NavBar = () => {
       expand="lg"
       bg={theme ? "dark" : "light"}
       variant={theme ? "dark" : "light"}
+      id="myNavbar"
     >
       <Nav>
         <Nav.Item>
