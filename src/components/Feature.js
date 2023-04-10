@@ -1,11 +1,19 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import RunRandom from "../containers/page-feature/RunRandom";
+import { Col, Container, Row } from "react-bootstrap";
+import Weather from "../containers/page-feature/Weather";
 
 const Feature = () => {
   return (
     <Container className="feature mgTop">
-      <RunRandom />
+      <Row>
+        <Col sm={8} md={8} lg={8}>
+          <h2>Weather</h2>
+          <Weather />
+        </Col>
+        <Col sm={4} md={4} lg={4}>
+          helo
+        </Col>
+      </Row>
     </Container>
   );
 };
