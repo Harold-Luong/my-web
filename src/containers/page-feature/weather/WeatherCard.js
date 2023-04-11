@@ -6,7 +6,7 @@ import {
   formatDayShortLong,
   roundToInteger,
 } from "./date";
-import { fetchWeather } from "../../rootReducers";
+import { fetchWeather } from "../../../rootReducers";
 const WeatherCard = ({ weatherData }) => {
   const dispatch = useDispatch();
   const fecthdata = () => {

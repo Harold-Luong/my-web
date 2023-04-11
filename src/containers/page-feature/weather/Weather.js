@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectWeatherData } from "../../features/wether/weatherSlice";
-import "../page-feature/weather.scss";
+import { selectWeatherData } from "../../../features/wether/weatherSlice";
+import "./weather.scss";
 import Weakly from "./Weakly";
 import WeatherCard from "./WeatherCard";
 

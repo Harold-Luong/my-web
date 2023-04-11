@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+ 
 
 export const fetchWeather = createAsyncThunk(
   "weather/fetchWeather",
@@ -14,7 +15,8 @@ export const fetchWeather = createAsyncThunk(
     // const city = "Ho Chi Minh";
 
     const url = `${apiUrl}?lat=${latitude}&lon=${longitude}&exclude=${exclude}&appid=${apiKey}&lang=${language}&units=${units}`;
-
+    
+    console.log(url)
     const response = await axios.get(url);
 
     return response.data;
