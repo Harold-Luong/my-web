@@ -9,6 +9,7 @@ import GalleryPage from "./components/GalleryPage";
 import HomePage from "./components/HomePage";
 import Feature from "./components/Feature";
 import { useSelector } from "react-redux";
+import Wedding from "./components/Wedding";
 
 function App() {
   const themeBg = useSelector((state) => state.page.theme);
@@ -34,6 +35,7 @@ function App() {
               </React.Fragment>
             }
           />
+          <Route exact path="/wedding" element={<Wedding />} />
         </Routes>
       </Router>
 

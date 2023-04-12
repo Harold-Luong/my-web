@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,17 +7,15 @@ import {
   roundToInteger,
 } from "./date";
 import { fetchWeather } from "../../../rootReducers";
+
 const WeatherCard = ({ weatherData }) => {
   const dispatch = useDispatch();
-  const fecthdata = () => {
-    dispatch(fetchWeather());
-  };
+  const province = useSelector((state) => state.weather.provinceVn);
   const loading = useSelector((state) => state.weather.loading);
   const error = useSelector((state) => state.weather.error);
-
-  useEffect(() => {
-    dispatch(fetchWeather());
-  }, [dispatch]);
+  const handleReload = () => {
+    dispatch(fetchWeather(province));
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -33,7 +31,7 @@ const WeatherCard = ({ weatherData }) => {
   const localDate = convertTimestampToObjDate(weatherData.current.dt);
   return (
     <Row className="card-body">
-      <Col xs={6} md={6}>
+      <Col xs={7} md={6}>
         <div className="weather-date-location">
           <h3>{formatDayShortLong(weatherData.current.dt, "long")}</h3>
           <span>
@@ -46,7 +44,7 @@ const WeatherCard = ({ weatherData }) => {
                 }`}
             </h5>
 
-            <p>{weatherData.timezone}, Vietnam</p>
+            <p>Tỉnh {province.name}, Việt Nam</p>
           </span>
         </div>
         <div className="weather-data d-flex">
@@ -63,10 +61,10 @@ const WeatherCard = ({ weatherData }) => {
         </div>
       </Col>
 
-      <Col xs={6} md={6}>
+      <Col xs={5} md={6}>
         <div className="weather-reload">
           <i
-            onClick={fecthdata}
+            onClick={handleReload}
             className="fa fa-refresh fa-fw"
             aria-hidden="true"
           ></i>

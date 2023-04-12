@@ -4,12 +4,17 @@ const initialState = {
   loading: false,
   weatherData: null,
   error: null,
+  provinceVn: { name: "Hồ Chí Minh", lat: 10.8, lng: 106.65, id: 30 },
 };
 
 export const weatherSlice = createSlice({
   name: "weather",
   initialState,
-  reducers: {},
+  reducers: {
+    setProvince: (state, action) => {
+      state.provinceVn = JSON.parse(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchWeather.pending, (state) => {
@@ -31,5 +36,5 @@ export const weatherSlice = createSlice({
 });
 
 export const selectWeatherData = (state) => state.weather.weatherData;
-
+export const { setProvince } = weatherSlice.actions;
 export default weatherSlice.reducer;

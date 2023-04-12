@@ -89,11 +89,11 @@ const NavBar = () => {
           <Nav.Item>
             <Nav.Link
               as={Link}
-              eventKey="about"
-              to="/about"
+              eventKey="wedding"
+              to="/wedding"
               className="nav-link"
             >
-              About
+              Wedding
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>

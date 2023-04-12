@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import "./notFoundPage.scss";
 const NotFoundPage = () => {
   return (
-    <Container fluid className="mgTop ">
+    <div className="mgTop ">
       <div className="bgimg w3-display-container w3-animate-opacity w3-text-white">
         <div className="w3-display-topleft w3-padding-large w3-xlarge">
           Logo
@@ -20,7 +20,7 @@ const NotFoundPage = () => {
           Powered by DucTrong
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

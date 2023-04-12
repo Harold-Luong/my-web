@@ -8,6 +8,7 @@ import WeatherCard from "./WeatherCard";
 
 const Weather = () => {
   const weatherData = useSelector(selectWeatherData);
+
   return (
     <Container>
       <Row className="card-weather-parent">
