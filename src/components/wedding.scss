@@ -1,42 +1,29 @@
+@mixin stylePosition($top, $left) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-$top, -left);
+}
 .wedding {
-  // p {
-  //   line-height: 2;
-  // }
-
-  // .bgimg,
-  // .bgimg2 {
-  //   min-height: 100%;
-  //   background-position: center;
-  //   background-size: cover;
-  // }
-  // .bgimg {
-  //   background-image: url("https://www.w3schools.com/w3images/wedding_couple.jpg");
-  // }
-  // .bgimg2 {
-  //   background-image: url("https://www.w3schools.com/w3images/flowers.jpg");
-  // }
-  /* Parallax base styles
-  --------------------------------------------- */
-
   .parallax {
-    height: 500px; /* fallback for older browsers */
+    height: 500px;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-perspective: 300px;
     perspective: 300px;
     -webkit-perspective-origin-x: 100%;
-    perspective-origin-x: 100%;
+    perspective-origin: 100%;
+    font-size: 100%;
   }
-
   .parallax__group {
     position: relative;
-    height: 500px; /* fallback for older browsers */
+    height: 500px;
     height: 100vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-
   .parallax__layer {
     position: absolute;
     top: 0;
@@ -44,182 +31,154 @@
     right: 0;
     bottom: 0;
     -webkit-transform-origin-x: 100%;
-    // transform-origin-x: 100%;
+    transform-origin: 100%;
   }
-
   .parallax__layer--fore {
     -webkit-transform: translateZ(90px) scale(0.7);
     transform: translateZ(90px) scale(0.7);
     z-index: 1;
   }
-
   .parallax__layer--base {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     z-index: 4;
   }
-
   .parallax__layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
     z-index: 3;
   }
-
   .parallax__layer--deep {
     -webkit-transform: translateZ(-600px) scale(3);
     transform: translateZ(-600px) scale(3);
     z-index: 2;
   }
-
-  /* demo styles
-  --------------------------------------------- */
-
-  body,
-  html {
-    overflow: hidden;
-  }
-
-  body {
-    font: 100% / 1.5 Arial;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .parallax {
-    font-size: 200%;
-  }
-
-  /* centre the content in the parallax layers */
   .title {
-    // text-align: center;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-
-  /* style the groups
-  --------------------------------------------- */
-
   #group1 {
-    z-index: 5; /* slide over group 2 */
+    z-index: 5;
+    .parallax__layer--base {
+      background-position: center;
+      background-size: cover;
+      //background-image: url(https://www.w3schools.com/w3images/flowers.jpg);
+      background-color: #06a;
+      .title {
+        @include stylePosition(50%, 50%);
+        background-color: rgb(0, 126, 73);
+        color: #fff;
+        padding: 10px;
+        opacity: 1;
+      }
+    }
   }
-  #group1 .parallax__layer--base {
-    background-position: center;
-    background-size: cover;
-    background-image: url(https://www.w3schools.com/w3images/flowers.jpg);
-  }
-
   #group2 {
-    z-index: 3; /* slide under groups 1 and 3 */
+    z-index: 3;
+    .parallax__layer--base {
+      .title {
+        @include stylePosition(30%, 30%);
+        padding: 10px;
+        opacity: 1;
+        width: 50%;
+      }
+    }
+    .parallax__layer--none {
+      background-position: center;
+      background-size: cover;
+      //background-image: url(https://www.w3schools.com/w3images/wedding_couple2.jpg);
+      background-color: burlywood;
+      -webkit-transform: translateZ(-300px) scale(2);
+      transform: translateZ(-300px) scale(2);
+      z-index: 3;
+      .title {
+        @include stylePosition(30%, 70%);
+        background-color: #a00;
+        color: #ccc;
+        padding: 10px;
+        opacity: 1;
+        width: 50%;
+      }
+    }
   }
-  #group2 .parallax__layer--back {
-    background-position: center;
-    background-size: cover;
-    background-image: url(https://www.w3schools.com/w3images/wedding_couple.jpg);
-  }
-
   #group3 {
-    z-index: 4; /* slide over group 2 and 4 */
+    z-index: 4;
+    .parallax__layer--base {
+      background-position: center;
+      background-size: cover;
+      background-color: cadetblue;
+      //background-image: url(https://www.w3schools.com/w3images/wedding_couple2.jpg);
+      .title {
+        background-color: #ccc;
+        padding: 10px;
+        opacity: 1;
+      }
+    }
   }
-  #group3 .parallax__layer--base {
-    background-position: center;
-    background-size: cover;
-
-    background-image: url(https://www.w3schools.com/w3images/wedding_couple2.jpg);
-  }
-
   #group4 {
-    z-index: 2; /* slide under group 3 and 5 */
+    z-index: 2;
+    .parallax__layer--deep {
+      background: rgb(255, 255, 255);
+      .title {
+        background-color: #06a;
+        padding: 10px;
+        opacity: 0.8;
+        color: #ccc;
+      }
+    }
+    .parallax__layer--base {
+      .title {
+        color: #a00;
+      }
+    }
   }
-  #group4 .parallax__layer--deep {
-    background: rgb(255, 255, 255);
-  }
-
   #group5 {
-    z-index: 3; /* slide over group 4 and 6 */
+    z-index: 3;
+    .parallax__layer--base {
+      background-position: center;
+      background-size: cover;
+      background-color: darkslategrey;
+      //background-image: url(https://www.w3schools.com/w3images/wedding_location.jpg);
+      .title {
+        color: #ccc;
+      }
+    }
+    .parallax__layer--fore {
+      .title {
+        background-color: #000000;
+        opacity: 1;
+        color: #fff;
+        padding: 10px;
+      }
+    }
   }
-  #group5 .parallax__layer--base {
-    background-position: center;
-    background-size: cover;
-    background-image: url(https://www.w3schools.com/w3images/wedding_location.jpg);
-  }
-
   #group6 {
-    z-index: 2; /* slide under group 5 and 7 */
+    z-index: 2;
+    .parallax__layer--back {
+      background: rgb(255, 255, 255);
+      .title {
+        background-color: #06a;
+        color: #ccc;
+        opacity: 0.8;
+        padding: 10px;
+      }
+    }
   }
-  #group6 .parallax__layer--back {
-    background: rgb(255, 255, 255);
-  }
-
   #group7 {
-    z-index: 3; /* slide over group 7 */
+    z-index: 3;
+    .parallax__layer--base {
+      background-position: center;
+      background-size: cover;
+      background-color: darkgreen;
+      //background-image: url(https://bluerosesandstardust.files.wordpress.com/2013/01/hd3.jpg);
+    }
+    .title {
+      color: #fff;
+    }
   }
-  #group7 .parallax__layer--base {
-    background-position: center;
-    background-size: cover;
-    background-image: url(https://bluerosesandstardust.files.wordpress.com/2013/01/hd3.jpg);
-  }
-
-  #group1 .parallax__layer--base .title {
-    background-color: #36c;
-    color: #fff;
-    padding: 10px;
-    opacity: 0.8;
-  }
-
-  #group2 .parallax__layer--back .title {
-    background-color: #a00;
-    color: #ccc;
-    padding: 10px;
-    opacity: 0.8;
-    width: 50%;
-  }
-
-  #group3 .parallax__layer--base .title {
-    background-color: #ccc;
-    padding: 10px;
-    opacity: 0.8;
-  }
-
-  #group4 .parallax__layer--deep .title {
-    background-color: #06a;
-    padding: 10px;
-    opacity: 0.8;
-    color: #ccc;
-  }
-
-  #group4 .parallax__layer--base .title {
-    color: #a00;
-  }
-
-  #group5 .parallax__layer--base .title {
-    color: #ccc;
-  }
-
-  #group5 .parallax__layer--fore .title {
-    background-color: #fff;
-    opacity: 0.8;
-    padding: 10px;
-  }
-
-  #group6 .parallax__layer--back .title {
-    background-color: #06a;
-    color: #ccc;
-    opacity: 0.8;
-    padding: 10px;
-  }
-
-  #group7 .title {
-    color: #fff;
-  }
-
-  /* misc
-  --------------------------------------------- */
   .demo__info {
     position: absolute;
     z-index: 100;
