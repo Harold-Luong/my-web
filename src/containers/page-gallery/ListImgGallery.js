@@ -19,12 +19,7 @@ const ListImgGallery = () => {
   const setShow = useSelector((state) => state.page.show);
 
   return (
-    <Container className="list-img">
-      <Row>
-        <h1 className="heading-text">
-          My <span>image gallery</span>
-        </h1>
-      </Row>
+    <Container className="list-img ">
       <Row>
         <ul className="ul-image-gallery">
           {imageGallery.map((item, key) => (

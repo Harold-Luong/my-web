@@ -16,25 +16,26 @@ const HomePage = () => {
       <div className="w3-content w3-container w3-padding-64" id="about">
         <h3 className="w3-center">ABOUT ME</h3>
         <p className="w3-center">
-          <em>I love photography</em>
+          <em>I love coding</em>
         </p>
         <p>
-          We have created a fictional "personal" website/blog, and our fictional
-          character is a hobby photographer. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Hello, I am a software developer. I am passionate about technology and
+          always eager to explore new things in this field. I have studied and
+          worked in the information technology industry for a long time and have
+          accumulated a lot of experience in programming and software
+          development.
         </p>
         <div className="w3-row">
           <div className="w3-col m6 w3-center w3-padding-large">
             <p>
               <b>
-                <i className="fa fa-user w3-margin-right"></i>My Name
+                <i className="fa fa-user w3-margin-right"></i>Lương Nguyễn Đức
+                Trọng
               </b>
             </p>
             <br />
             <Image
-              src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://scontent.fsgn4-1.fna.fbcdn.net/v/t39.30808-6/324581184_896305721806568_7532402621965377733_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=TmnxAZaSD_EAX-HnROH&_nc_ht=scontent.fsgn4-1.fna&oh=00_AfBJD2LNy97owWKGF8fOjBbkXuvmSGfk8nzupTVMvJki7A&oe=64447562"
               className="w3-round w3-image w3-opacity w3-hover-opacity-off"
               alt="Photo of Me"
               width={500}
@@ -44,17 +45,16 @@ const HomePage = () => {
           {/* <!-- Hide this text on small devices --> */}
           <div className="w3-col m6 w3-hide-small w3-padding-large">
             <p>
-              Welcome to my website. I am lorem ipsum consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              I enjoy challenges and always strive to improve my skills. I
+              believe that learning is endless, and I always try to learn from
+              those who are better than me to develop my career. Additionally, I
+              also have good teamwork skills and always respect the opinions of
+              others.
+            </p>
+            <p>
+              I hope to have the opportunity to meet and collaborate with many
+              people in the industry to develop better products that meet the
+              needs of users.
             </p>
           </div>
         </div>

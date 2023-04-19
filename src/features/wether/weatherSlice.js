@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchWeather } from "./weatherThunks";
 const initialState = {
   loading: false,
-  weatherData: null,
   error: null,
+  weatherData: null,
   provinceVn: { name: "Hồ Chí Minh", lat: 10.8, lng: 106.65, id: 30 },
 };
 
@@ -28,6 +28,7 @@ export const weatherSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchWeather.rejected, (state, action) => {
+        console.log(action.error);
         state.loading = false;
         state.weatherData = null;
         state.error = action.error.message;

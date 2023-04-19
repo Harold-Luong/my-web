@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import provinceVn from "../../../asset/provinceVN";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,15 +11,11 @@ const LocationSearch = () => {
   const optionDefault = useSelector((state) => state.weather.provinceVn);
   const [selected, setSelected] = useState(JSON.stringify(optionDefault));
   const handleSelectOption = (event) => {
-    setSelected(event.target.value);
-    dispatch(setProvince(event.target.value));
-    dispatch(fetchWeather(JSON.parse(selected)));
+    const valueChoose = event.target.value;
+    setSelected(valueChoose);
+    dispatch(setProvince(valueChoose));
+    dispatch(fetchWeather(JSON.parse(valueChoose)));
   };
-
-  //khơi
-  useEffect(() => {
-    dispatch(fetchWeather(JSON.parse(selected)));
-  }, [dispatch]);
 
   return (
     <Container>

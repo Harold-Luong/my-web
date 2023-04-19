@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -13,22 +13,27 @@ const WeatherCard = ({ weatherData }) => {
   const province = useSelector((state) => state.weather.provinceVn);
   const loading = useSelector((state) => state.weather.loading);
   const error = useSelector((state) => state.weather.error);
+
   const handleReload = () => {
     dispatch(fetchWeather(province));
   };
+  useEffect(() => {
+    dispatch(fetchWeather(province));
+  }, [dispatch, province]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Row className="card-body">Loading...</Row>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Row className="card-body">Error: {error}</Row>;
   }
 
   if (!weatherData) {
     return null;
   }
   const localDate = convertTimestampToObjDate(weatherData.current.dt);
+
   return (
     <Row className="card-body">
       <Col xs={7} md={6}>
@@ -44,7 +49,7 @@ const WeatherCard = ({ weatherData }) => {
                 }`}
             </h5>
 
-            <p>Tỉnh {province.name}, Việt Nam</p>
+            <p>{province.name}, Việt Nam</p>
           </span>
         </div>
         <div className="weather-data d-flex">

@@ -43,7 +43,7 @@ const NavFilterBtn = () => {
 
   return (
     <div className="toolbar">
-      {uniqueLocationsArray.map((location, index) => (
+      {/* {uniqueLocationsArray.map((location, index) => (
         <button
           key={index}
           className={`btn-filter${filter === location ? " btn-active" : ""}`}
@@ -52,7 +52,30 @@ const NavFilterBtn = () => {
         >
           {location}
         </button>
-      ))}
+      ))} */}
+
+      <div className="w3-card w3-margin">
+        <div className="w3-container w3-padding">
+          <h4>Tags</h4>
+        </div>
+        <div className="w3-container  ">
+          <p>
+            {/*  <span class="w3-tag w3-black w3-margin-bottom">Travel</span> */}
+            {uniqueLocationsArray.map((location, index) => (
+              <button
+                key={index}
+                className={`   w3-medium  ${
+                  filter === location ? " w3-black " : "w3-light-grey"
+                }`}
+                value={location}
+                onClick={handleClickFilterButton}
+              >
+                {location}
+              </button>
+            ))}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

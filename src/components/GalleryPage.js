@@ -4,20 +4,23 @@ import ListImgGallery from "../containers/page-gallery/ListImgGallery";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import PaginationBar from "../containers/page-gallery/PaginationBar";
+import { Col } from "react-bootstrap";
 
 const GalleryPage = () => {
   return (
-    <Container>
+    <Container className="mgTop ">
       <Row>
-        <NavFilterBtn />
-      </Row>
+        <h1 className="heading-text" style={{ textAlign: "center" }}>
+          My <span>image gallery</span>
+        </h1>
 
-      <Row>
-        <ListImgGallery />
-      </Row>
-
-      <Row>
-        <PaginationBar />
+        <Col xs={12} md={3}>
+          <NavFilterBtn />
+        </Col>
+        <Col xs={12} md={9}>
+          <ListImgGallery />
+          <PaginationBar />
+        </Col>
       </Row>
     </Container>
   );

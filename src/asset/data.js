@@ -25,8 +25,14 @@ import img24 from "../asset/bg-img/24.jpg";
 import img25 from "../asset/bg-img/28.jpg";
 import img26 from "../asset/bg-img/26.jpg";
 import img27 from "../asset/bg-img/27.jpg";
+import img28 from "../asset/bg-img/28.jpg";
+import img29 from "../asset/bg-img/29.jpg";
+import img30 from "../asset/bg-img/30.jpg";
+import img31 from "../asset/bg-img/31.jpg";
+import img32 from "../asset/bg-img/32.jpg";
+import img33 from "../asset/bg-img/33.jpg";
 
-const itemsPerPage = 10;
+const itemsPerPage = 6;
 
 const imageGalleryData = [
   {
@@ -218,6 +224,49 @@ const imageGalleryData = [
     title: "Đường Hầm Củ Chi",
     description: "Kiến trúc đẹp của Đường Hầm Củ Chi ở Tây Ninh",
     src: img27,
+  },
+  {
+    id: 28,
+    location: "Hạ Long",
+    title: "Vịnh Hạ Long",
+    description: "Khám phá vẻ đẹp kỳ vĩ của Vịnh Hạ Long",
+    src: img28,
+  },
+  {
+    id: 29,
+    location: "Đà Lạt",
+    title: "Thung lũng Tình Yêu",
+    description: "Thung lũng lãng mạn và đẹp nhất của Đà Lạt",
+    src: img29,
+  },
+  {
+    id: 30,
+    location: "Hội An",
+    title: "Phố cổ Hội An",
+    description: "Khám phá phố cổ độc đáo và đẹp nhất Việt Nam",
+    src: img30,
+  },
+  {
+    id: 31,
+    location: "Sài Gòn",
+    title: "Công viên 30/4",
+    description: "Thưởng ngoạn công viên 30/4 với thiết kế đẹp và hiện đại",
+    src: img31,
+  },
+  {
+    id: 32,
+    location: "Nha Trang",
+    title: "Bãi biển Nha Trang",
+    description:
+      "Tận hưởng không gian yên bình, thư giãn với bãi biển Nha Trang",
+    src: img32,
+  },
+  {
+    id: 33,
+    location: "Đà Nẵng",
+    title: "Cầu Rồng Đà Nẵng",
+    description: "Chiêm ngưỡng vẻ đẹp độc đáo của Cầu Rồng Đà Nẵng",
+    src: img33,
   },
 ];
 

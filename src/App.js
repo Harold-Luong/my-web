@@ -17,7 +17,7 @@ function App() {
   return (
     <div className={themeBg ? "bg-dark" : "bg-light"}>
       <Router>
-        <NavBar id="top" />
+        <NavBar />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/gallery" element={<GalleryPage />} />
@@ -27,6 +27,7 @@ function App() {
             element={<ContactPage themeBg={themeBg} />}
           />
           <Route exact path="/feature" element={<Feature />} />
+          <Route exact path="/wedding" element={<Wedding />} />
           <Route
             path="/*"
             element={
@@ -35,10 +36,8 @@ function App() {
               </React.Fragment>
             }
           />
-          <Route exact path="/wedding" element={<Wedding />} />
         </Routes>
       </Router>
-
       <Footer></Footer>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import sun from "../asset/img-mode/sun.png";
-import moon from "../asset//img-mode/moon.png";
-import logo from "../asset//img-mode/logo.png";
+import moon from "../asset/img-mode/moon.png";
+import logo from "../asset/img-mode/logo.png";
 import { Link } from "react-router-dom";
 import "./navBar.scss";
 import { useLocation } from "react-router-dom";
@@ -25,12 +25,12 @@ const NavBar = () => {
 
   return (
     <Navbar
+      id="top"
       fixed="top"
       collapseOnSelect
       expand="lg"
       bg={theme ? "dark" : "light"}
       variant={theme ? "dark" : "light"}
-      id="myNavbar"
     >
       <Nav>
         <Nav.Item>
