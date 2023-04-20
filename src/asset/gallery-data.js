@@ -39,7 +39,8 @@ const imageGalleryData = [
     id: 1,
     location: "Vũng Tàu",
     title: "Bãi biển Thùy Vân",
-    description: "Cảnh đẹp bãi biển Thùy Vân ở Vũng Tàu",
+    description:
+      "Cảnh đẹp bãi biển Thùy Vân ở Vũng Tàu Integer at pharetra metus, non porttitor lorem. Pellentesque consectetur lacus at erat maximus fringilla. Mauris suscipit commodo lacus id rutrum. Suspendisse potenti. Vestibulum cursus lobortis suscipit. Pellentesque vel eleifend urna. Praesent id pellentesque metus. Aenean accumsan ipsum ac consectetur convallis. Sed efficitur blandit turpis ut rhoncus. Integer vehicula risus eget purus porttitor gravida. Ut dapibus aliquet quam, non tempus elit varius non. Aliquam rutrum molestie ipsum eu feugiat.",
     src: img1,
   },
   {

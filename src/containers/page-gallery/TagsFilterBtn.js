@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { imageGalleryData } from "../../asset/data";
+import { imageGalleryData } from "../../asset/gallery-data";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -56,7 +56,7 @@ const TagsFilterBtn = () => {
 
       <div className="w3-card w3-margin">
         <div className="w3-container w3-padding">
-          <h4>Tags</h4>
+          <h4>Location</h4>
         </div>
         <div className="w3-container  ">
           <p>
@@ -64,7 +64,7 @@ const TagsFilterBtn = () => {
             {uniqueLocationsArray.map((location, index) => (
               <button
                 key={index}
-                className={`   w3-medium  ${
+                className={` w3-medium  ${
                   filter === location ? " w3-black " : "w3-light-grey"
                 }`}
                 value={location}

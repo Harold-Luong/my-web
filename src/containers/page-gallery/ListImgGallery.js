@@ -26,11 +26,12 @@ const ListImgGallery = () => {
             <li key={key} className={`li-img ${setShow ? "show" : ""} `}>
               <img src={item.src} alt={item.location} />
               <div className="overlay" onClick={() => handleShow(item)}>
-                <span>{item.location}</span>
+                <span>{item.location} </span>
               </div>
             </li>
           ))}
         </ul>
+
         <ShowModal show={modalShow} onHide={handleClose} item={dataModal} />
       </Row>
     </Container>

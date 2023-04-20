@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { imageGalleryData, totalPages, itemsPerPage } from "../../asset/data";
+import {
+  imageGalleryData,
+  totalPages,
+  itemsPerPage,
+} from "../../asset/gallery-data";
 
 const pageSlice = createSlice({
   name: "page",

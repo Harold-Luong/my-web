@@ -10,6 +10,7 @@ import HomePage from "./components/HomePage";
 import Feature from "./components/Feature";
 import { useSelector } from "react-redux";
 import Wedding from "./components/Wedding";
+import Blogs from "./components/Blogs";
 
 function App() {
   const themeBg = useSelector((state) => state.page.theme);
@@ -27,6 +28,7 @@ function App() {
             element={<ContactPage themeBg={themeBg} />}
           />
           <Route exact path="/feature" element={<Feature />} />
+          <Route exact path="/blog" element={<Blogs />} />
           <Route exact path="/wedding" element={<Wedding />} />
           <Route
             path="/*"
