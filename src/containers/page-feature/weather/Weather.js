@@ -1,14 +1,13 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { selectWeatherData } from "../../../features/wether/weatherSlice";
 import "./weather.scss";
 import Weakly from "./Weakly";
+import { useSelector } from "react-redux";
+
 import WeatherCard from "./WeatherCard";
-
 const Weather = () => {
-  const weatherData = useSelector(selectWeatherData);
-
+  const weatherData = useSelector((state) => state.weather.weatherData);
+  console.log(weatherData);
   return (
     <Container>
       <Row className="card-weather-parent">

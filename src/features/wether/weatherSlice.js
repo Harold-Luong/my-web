@@ -28,7 +28,6 @@ export const weatherSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchWeather.rejected, (state, action) => {
-        console.log(action.error);
         state.loading = false;
         state.weatherData = null;
         state.error = action.error.message;

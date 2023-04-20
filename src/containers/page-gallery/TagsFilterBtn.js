@@ -6,9 +6,9 @@ import {
   setFilter,
   showImgByFilterAsync,
 } from "../../features/gallery/gallerySlice";
-import "./navFilterBtn.scss";
+import "./tagsFilterBtn.scss";
 
-const NavFilterBtn = () => {
+const TagsFilterBtn = () => {
   const filter = useSelector((state) => state.page.filter);
   const dispatch = useDispatch();
   const listImgGallery = imageGalleryData;
@@ -80,4 +80,4 @@ const NavFilterBtn = () => {
   );
 };
 
-export default NavFilterBtn;
+export default TagsFilterBtn;

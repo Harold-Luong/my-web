@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Image } from "react-bootstrap";
 import "./homePage.scss";
 
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <Container fluid className={`home-page mgTop `}>
@@ -13,7 +14,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* <!-- Container (About Section) --> */}
-      <div className="w3-content w3-container w3-padding-64" id="about">
+      <div className="w3-content  w3-container w3-padding-32" id="about">
         <h3 className="w3-center">ABOUT ME</h3>
         <p className="w3-center">
           <em>I love coding</em>
@@ -41,6 +42,11 @@ const HomePage = () => {
               width={500}
               height={300}
             />
+            <Link to="/contact">
+              <button className=" w3-margin-top w3-btn w3-white w3-border w3-round-large">
+                Contact
+              </button>
+            </Link>
           </div>
           {/* <!-- Hide this text on small devices --> */}
           <div className="w3-col m6 w3-hide-small w3-padding-large">
@@ -61,25 +67,20 @@ const HomePage = () => {
       </div>
 
       <div className="w3-row w3-center w3-dark-grey w3-padding-16">
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">14+</span>
+        <div className="w3-third w3-section">
+          <span className="w3-xlarge">Framework</span>
           <br />
-          Partners
+          Spring MVC, Spring Boot, Seasar2, Struts, Reactjs, Jquery
         </div>
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">55+</span>
+        <div className="w3-third w3-section">
+          <span className="w3-xlarge">Code</span>
           <br />
-          Projects Done
+          Java, JavaSript, SCSS, MySQL
         </div>
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">89+</span>
+        <div className="w3-third w3-section">
+          <span className="w3-xlarge">CSS</span>
           <br />
-          Happy Clients
-        </div>
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">150+</span>
-          <br />
-          Meetings
+          SCSS, SASS
         </div>
       </div>
 

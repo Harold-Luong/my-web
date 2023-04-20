@@ -12,6 +12,7 @@ const Weakly = ({ weatherData }) => {
       <img style={{ width: "50px", height: "50px" }} src={src} alt="icon" />
     );
   };
+
   return (
     <div className="d-flex weakly-weather">
       {weatherData &&

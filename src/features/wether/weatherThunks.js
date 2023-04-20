@@ -4,7 +4,6 @@ import axios from "axios";
 export const fetchWeather = createAsyncThunk(
   "weather/fetchWeather",
   async (province) => {
-    console.log(province);
     const apiUrl = "https://api.openweathermap.org/data/2.5/onecall";
     const latitude = province.lat;
     const longitude = province.lng;

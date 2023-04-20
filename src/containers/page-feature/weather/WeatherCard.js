@@ -1,26 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchWeather } from "../../../rootReducers";
+
 import {
   convertTimestampToObjDate,
   formatDayShortLong,
   roundToInteger,
 } from "./date";
-import { fetchWeather } from "../../../rootReducers";
 
 const WeatherCard = ({ weatherData }) => {
-  const dispatch = useDispatch();
   const province = useSelector((state) => state.weather.provinceVn);
   const loading = useSelector((state) => state.weather.loading);
   const error = useSelector((state) => state.weather.error);
+  const dispatch = useDispatch();
 
   const handleReload = () => {
     dispatch(fetchWeather(province));
   };
-  useEffect(() => {
-    dispatch(fetchWeather(province));
-  }, [dispatch, province]);
-
   if (loading) {
     return <Row className="card-body">Loading...</Row>;
   }
@@ -30,7 +27,7 @@ const WeatherCard = ({ weatherData }) => {
   }
 
   if (!weatherData) {
-    return null;
+    return <Row className="card-body">Không thể lấy được dữ liệu !</Row>;
   }
   const localDate = convertTimestampToObjDate(weatherData.current.dt);
 

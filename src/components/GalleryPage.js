@@ -1,5 +1,5 @@
 import React from "react";
-import NavFilterBtn from "../containers/page-gallery/NavFilterBtn";
+import TagsFilterBtn from "../containers/page-gallery/TagsFilterBtn";
 import ListImgGallery from "../containers/page-gallery/ListImgGallery";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -15,7 +15,7 @@ const GalleryPage = () => {
         </h1>
 
         <Col xs={12} md={3}>
-          <NavFilterBtn />
+          <TagsFilterBtn />
         </Col>
         <Col xs={12} md={9}>
           <ListImgGallery />
