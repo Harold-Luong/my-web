@@ -34,7 +34,6 @@ const PaginationBar = () => {
             {pageNumber}
           </Pagination.Item>
         ))}
-
         <Pagination.Next
           disabled={currentPage === page.length}
           onClick={() => handlePageChange(currentPage + 1)}

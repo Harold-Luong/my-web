@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import sun from "../asset/img-mode/sun.png";
 import moon from "../asset/img-mode/moon.png";
 import logo from "../asset/img-mode/logo.png";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./navBar.scss";
 import { useLocation } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
@@ -108,6 +108,7 @@ const NavBar = () => {
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
+      <Outlet />
     </Navbar>
   );
 };

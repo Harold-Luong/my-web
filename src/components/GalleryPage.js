@@ -13,11 +13,8 @@ const GalleryPage = () => {
         <h1 className="heading-text" style={{ textAlign: "center" }}>
           My <span>image gallery</span>
         </h1>
-
-        <Col xs={12} md={3}>
-          <TagsFilterBtn />
-        </Col>
-        <Col xs={12} md={9}>
+        <TagsFilterBtn />
+        <Col xs={12} md={12}>
           <ListImgGallery />
           <PaginationBar />
         </Col>

@@ -1,14 +1,13 @@
 import React, { useMemo } from "react";
-import { imageGalleryData } from "../../asset/gallery-data";
 
+import "./tagsFilter.scss";
+import { imageGalleryData } from "../asset/gallery-data";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setFilter,
   showImgByFilterAsync,
-} from "../../features/gallery/gallerySlice";
-import "./tagsFilterBtn.scss";
-
-const TagsFilterBtn = () => {
+} from "../features/gallery/gallerySlice";
+const TagsFilter = () => {
   const filter = useSelector((state) => state.page.filter);
   const dispatch = useDispatch();
   const listImgGallery = imageGalleryData;
@@ -40,32 +39,29 @@ const TagsFilterBtn = () => {
       );
     }
   };
-
   return (
-    <div className="toolbar">
-      <div className="  w3-margin">
-        <div className="w3-container w3-padding">
-          <h4>Location</h4>
-        </div>
-        <div className="w3-container">
-          <p>
-            {uniqueLocationsArray.map((location, index) => (
-              <button
-                key={index}
-                className={`w3-medium  ${
-                  filter === location ? "w3-black" : " "
-                }`}
-                value={location}
-                onClick={handleClickFilterButton}
-              >
-                {location}
-              </button>
-            ))}
-          </p>
-        </div>
+    <div className=" tags w3-border w3-margin">
+      <div className="w3-container w3-padding">
+        <h4>Tags</h4>
+      </div>
+      <div className="w3-container w3-white">
+        <p>
+          {uniqueLocationsArray.map((location, index) => (
+            <button
+              key={index}
+              className={`w3-tag  ${
+                filter === location ? " w3-tag-active " : ""
+              }`}
+              value={location}
+              onClick={handleClickFilterButton}
+            >
+              {location}
+            </button>
+          ))}
+        </p>
       </div>
     </div>
   );
 };
 
-export default TagsFilterBtn;
+export default TagsFilter;

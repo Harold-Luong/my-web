@@ -1,0 +1,27 @@
+.tags {
+  .w3-tag {
+    background-color: #ffff;
+    line-height: 22pt;
+    padding: 0 10px;
+
+    border: 1px solid #ffdfe4;
+    color: #898989;
+    font-family: "Work Sans", sans-serif;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 8px !important;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid #f63c4e;
+      transition: 300ms ease-in-out;
+    }
+  }
+  .w3-tag-active {
+    transition: 300ms ease-in-out;
+    background-color: #f63c4e;
+    color: #ffffff;
+    border: 1px solid #f63c4e;
+  }
+}
