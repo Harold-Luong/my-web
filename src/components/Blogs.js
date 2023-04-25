@@ -26,9 +26,6 @@ const Blogs = () => {
               <LocationBlogs />
             </Col>
           </Row>
-          <Row>
-            <PaginationBar />
-          </Row>
         </>
       )}
     </Container>

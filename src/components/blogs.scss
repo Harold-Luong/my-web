@@ -1,23 +1,22 @@
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: sans-serif;
-
   h1 {
     color: coral;
   }
   .grid-container {
-    columns: 3;
-    column-gap: 1.5rem;
-    width: 100%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+
     .card-blog {
-      width: 50%;
+      columns: 2;
+      column-gap: 1.5rem;
+      width: 100%;
+      margin: 0 auto;
       margin: 0 1.5rem 1.5rem 0;
       display: inline-block;
-      width: 100%;
+
       border: solid 1px rgba(236, 132, 132, 0);
       padding: 5px;
       //   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);

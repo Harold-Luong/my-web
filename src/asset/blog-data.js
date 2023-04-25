@@ -1,21 +1,148 @@
-const blogs = {
-  id: 2,
-  location: "Tây Ninh",
-  title: "Chùa Bà Đen",
-  description: "Kiến trúc đẹp của chùa Bà Đen ở Tây Ninh",
-  src: img2,
-  date: "20/05/2022", // Ngày đăng bài
-  author: "Nguyễn Văn A", // Tên tác giả
-  category: "Du lịch tâm linh", // Thể loại bài viết
-  tags: ["Chùa", "Tây Ninh", "Du lịch tâm linh"], // Các từ khóa tìm kiếm
-  content: [
-    // Nội dung bài viết, có thể sử dụng các thẻ HTML như <p>, <h1>, <h2>, <img>, ...
-    "<p>Chùa Bà Đen là một trong những địa điểm tâm linh nổi tiếng ở Tây Ninh.</p>",
-    "<p>...</p>",
-    "<img src='...'>",
-    "<p>...</p>",
-    "<h2>...</h2>",
-    "<p>...</p>",
-    "<p>...</p>",
-  ],
-};
+const blogs = [
+  {
+    id: 1,
+    location: "Tây Ninh",
+    title: "Chùa Bà Đen",
+    description: "Kiến trúc đẹp của chùa Bà Đen ở Tây Ninh",
+    thumbnail: "https://picsum.photos/id/1044/500/300",
+    date: "20/05/2022",
+    author: "Nguyễn Văn A",
+    category: "Du lịch tâm linh",
+    tags: ["Chùa", "Du lịch tâm linh"],
+  },
+  {
+    id: 2,
+    location: "Sapa",
+    title: "Mây trắng đầy núi rừng",
+    description:
+      "Sapa luôn là điểm đến hấp dẫn của du khách với khí hậu mát mẻ quanh năm, cảnh sắc tuyệt đẹp và nét văn hóa đặc sắc.",
+    thumbnail: "https://picsum.photos/id/1011/500/300",
+    date: "05/06/2022",
+    author: "Nguyễn Thị B",
+    category: "Du lịch miền núi",
+    tags: ["Du lịch miền núi", "Cảnh đẹp"],
+  },
+  {
+    id: 3,
+    location: "Phú Quý",
+    title: "Khám phá đảo Phú Quý",
+    description:
+      "Đảo Phú Quý có nhiều bãi tắm đẹp và nơi đây cũng là nơi đáp xuống của nhiều loài chim di cư vào mùa đông.",
+    thumbnail: "https://picsum.photos/id/1025/500/300",
+    date: "10/07/2022",
+    author: "Lê Văn C",
+    category: "Du lịch biển",
+    tags: ["Đảo Phú Quý", "Du lịch biển", "Bãi tắm", "Chùa"],
+  },
+  {
+    id: 4,
+    location: "Nha Trang",
+    title: "Thưởng thức hải sản tươi sống ở Nha Trang",
+    description:
+      "Với vị trí địa lý thuận lợi, Nha Trang là một trong những địa điểm nổi tiếng về hải sản tươi sống.",
+    thumbnail: "https://picsum.photos/id/1006/500/300",
+    date: "15/08/2022",
+    author: "Phạm Thị D",
+    category: "Ẩm thực",
+    tags: ["Ẩm thực", "Hải sản"],
+  },
+  {
+    id: 5,
+    location: "Đà Lạt",
+    title: "Thác Pongour",
+    description:
+      "Thác Pongour là một trong những thác đẹp và lớn nhất tại Đà Lạt, nằm cách trung tâm thành phố khoảng 50km về phía Nam. Thác có chiều cao khoảng 40m, bao quanh là rừng thông và đá granite. ",
+    thumbnail: "https://picsum.photos/id/1080/500/300",
+    date: "01/06/2022",
+    author: "Trần Thị B",
+    category: "Du lịch sinh thái",
+    tags: ["Thác Pongour", "Thác nước"],
+  },
+  {
+    id: 6,
+    location: "Hà Nội",
+    title: "Chùa Trấn Quốc",
+    description:
+      "Chùa Trấn Quốc là một trong những di tích văn hóa nổi tiếng của Hà Nội, nằm trên đảo Trấn Quốc của hồ Tây. Đây là ngôi chùa cổ nhất Hà Nội, có niên đại gần 1500 năm.",
+    thumbnail: "https://picsum.photos/id/1035/500/300",
+    date: "05/06/2022",
+    author: "Nguyễn Văn C",
+    category: "Du lịch tâm linh",
+    tags: ["Chùa", "Du lịch tâm linh"],
+  },
+  {
+    id: 7,
+    location: "Phú Quốc",
+    title: "Bãi Sao - Nơi đẹp nhất của đảo Ngọc",
+    description:
+      "Bãi Sao được coi là một trong những bãi biển đẹp nhất tại Phú Quốc, được biết đến bởi cát trắng và nước biển trong xanh.",
+    thumbnail: "https://picsum.photos/id/1027/500/300",
+    date: "12/08/2022",
+    author: "Nguyễn Văn B",
+    category: "Du lịch biển",
+    tags: ["Bãi Sao", "Du lịch biển"],
+  },
+  {
+    id: 8,
+    location: "Nha Trang",
+    title: "Tháp Bà Ponagar - Thánh địa của người Chăm",
+    description:
+      "Tháp Bà Ponagar là một di tích lịch sử văn hóa của người Chăm, được xây dựng từ thế kỷ VII đến thế kỷ XII.",
+    thumbnail: "https://picsum.photos/id/1035/500/300",
+    date: "01/09/2022",
+    author: "Nguyễn Văn B",
+    category: "Du lịch tâm linh",
+    tags: ["Tháp Bà Ponagar", "Di tích lịch sử"],
+  },
+  {
+    id: 9,
+    location: "Hạ Long",
+    title: "Vịnh Hạ Long - Kỳ quan thiên nhiên thế giới",
+    description:
+      "Vịnh Hạ Long là một trong những điểm đến du lịch nổi tiếng nhất của Việt Nam, với hình thù đặc biệt của những đá phong cảnh và rất nhiều hòn đảo.",
+    thumbnail: "https://picsum.photos/id/1062/500/300",
+    date: "20/09/2022",
+    author: "Nguyễn Văn C",
+    category: "Du lịch biển",
+    tags: ["Du lịch biển", "Phong cảnh đẹp"],
+  },
+  {
+    id: 10,
+    location: "Hạ Long",
+    title: "Khám phá vịnh Hạ Long",
+    description: "Vịnh Hạ Long là một kỳ quan thiên nhiên của thế giới",
+    thumbnail: "https://picsum.photos/id/110/500/300",
+    date: "10/10/2022",
+    author: "Nguyễn Thị B",
+    category: "Du lịch sinh thái",
+    tags: ["Du lịch biển", "Du lịch sinh thái"],
+  },
+  {
+    id: 11,
+    location: "Hội An",
+    title: "Phố cổ Hội An",
+    description: "Khám phá vẻ đẹp phố cổ Hội An - Di sản văn hóa thế giới",
+    thumbnail: "https://picsum.photos/id/1012/500/300",
+    date: "25/07/2022",
+    author: "Nguyễn Thị B",
+    category: "Du lịch văn hóa",
+    tags: ["Phố cổ", "Di sản văn hóa"],
+  },
+  {
+    id: 12,
+    location: "Lào Cai",
+    title: "Sapa - Vùng đất tình yêu",
+    description:
+      "Sapa là một vùng núi huyền thoại, là vùng đất được thiên nhiên ưu ái ban tặng nhiều cảnh đẹp tuyệt vời.",
+    thumbnail: "https://picsum.photos/id/1043/500/300",
+    date: "12/09/2022",
+    author: "Trần Thị B",
+    category: "Du lịch miền Bắc",
+    tags: ["Sapa", "Du lịch miền Bắc"],
+  },
+];
+const uniqueTags = blogs.reduce((tags, blog) => {
+  return [...new Set([...tags, ...blog.tags])];
+}, []);
+uniqueTags.unshift("All");
+export { blogs, uniqueTags };

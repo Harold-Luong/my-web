@@ -1,38 +1,47 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
+import contentData from "../../asset/contet-blog-data";
 const CardContent = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const obj = location.state.content;
+  const id = obj.id;
 
+  const filteredContent = contentData.filter((content) => content.id === id);
+  console.log(filteredContent[0].imgArr);
   return (
     <Container className="w3-animate-zoom">
-      <img src={obj.src} alt="Nature" style={{ width: "100%" }}></img>
+      <img src={obj.thumbnail} alt="Nature" style={{ width: "100%" }}></img>
       <Row className="w3-container">
         <h3>
           <b>{obj.location}</b>
         </h3>
         <h5>
-          {obj.title} <span className="w3-opacity">April 7, 2014</span>
+          {obj.title} <span className="w3-opacity">{obj.date}</span>
         </h5>
       </Row>
       <Row>
         <Row style={{ textAlign: "justify" }}>
-          <p>{obj.description}</p>
+          {/* <p>{obj.description}</p> */}
+          {filteredContent[0].textBody.map((i, k) => {
+            return <span key={k}>{i}</span>;
+          })}
         </Row>
         <Row>
           <Col md={5}>
-            <img src={obj.src} alt="Nature" style={{ width: "100%" }}></img>
+            {filteredContent[0].imgArr.map((item, key) => {
+              return (
+                <img
+                  key={key}
+                  src={item}
+                  alt="Nature"
+                  style={{ width: "100%" }}
+                ></img>
+              );
+            })}
           </Col>
-          <Col md={7} style={{ textAlign: "justify" }}>
-            <p>
-              We have created a fictional "personal" website/blog, and our
-              fictional character is a hobby photographer. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-          </Col>
+          <Col md={7} style={{ textAlign: "justify" }}></Col>
         </Row>
       </Row>
 

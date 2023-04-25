@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./locationBlogs.scss";
-
+import { useSelector } from "react-redux";
 const LocationBlogs = () => {
+  const [count, setCount] = useState(1);
+  const blogs = useSelector((state) => state.blogs.filteredBlogs);
+  const uniqueLocation = blogs.reduce((location, blog) => {
+    return [...new Set([...location, blog.location])];
+  }, []);
+
+  console.log(uniqueLocation);
+
   return (
     <div className=" tags w3-border w3-margin">
       <div className="w3-container w3-padding">
@@ -10,22 +18,16 @@ const LocationBlogs = () => {
       </div>
       <div className="w3-container w3-white">
         <ul className="w3-ul">
-          <li className="w3-display-container">
-            Tây Ninh
-            <span className=" w3-transparent w3-display-right">(5)</span>
-          </li>
-          <li className="w3-display-container">
-            Tây Ninh
-            <span className=" w3-transparent w3-display-right">(5)</span>
-          </li>
-          <li className="w3-display-container">
-            Tây Ninh
-            <span className=" w3-transparent w3-display-right">(5)</span>
-          </li>
-          <li className="w3-display-container">
-            Tây Ninh
-            <span className=" w3-transparent w3-display-right">(5)</span>
-          </li>
+          {uniqueLocation.map((item, key) => {
+            return (
+              <li key={key} id="location" className="w3-display-container ">
+                {item}
+                <span id="count" className="w3-transparent w3-display-right">
+                  {count}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
