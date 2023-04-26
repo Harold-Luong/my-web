@@ -11,7 +11,7 @@ import Feature from "./components/Feature";
 import { useSelector } from "react-redux";
 import Wedding from "./components/Wedding";
 import Blogs from "./components/Blogs";
-import CardBlog from "./containers/page-blog/CardBlog";
+// import CardBlog from "./containers/page-blog/CardBlog";
 import CardContent from "./containers/page-blog/CardContent";
 
 function App() {

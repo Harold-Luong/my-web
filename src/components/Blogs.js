@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import "./blogs.scss";
 import TagsFilter from "../constants/TagsFilter";
 import LocationBlogs from "../containers/page-blog/LocationBlogs";
-import PaginationBar from "../containers/page-gallery/PaginationBar";
+// import PaginationBar from "../containers/page-gallery/PaginationBar";
 import CardBlog from "../containers/page-blog/CardBlog";
 import { Outlet } from "react-router-dom";
 
@@ -18,12 +18,12 @@ const Blogs = () => {
       ) : (
         <>
           <Row>
-            <Col className=" w3-padding-16 content" md={8} xs={12}>
+            <Col md={8} xs={12}>
               <CardBlog />
             </Col>
             <Col md={4} xs={12}>
-              <TagsFilter />
               <LocationBlogs />
+              <TagsFilter />
             </Col>
           </Row>
         </>

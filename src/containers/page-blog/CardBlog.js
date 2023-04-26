@@ -13,49 +13,33 @@ const CardBlog = () => {
   };
 
   return (
-    <div className="grid-container">
-      {blogs.map((item, key) => {
-        return (
-          <div key={key} className="card-blog w3-animate-zoom">
-            <img
-              className="grid-item grid-item-1"
-              src={item.thumbnail}
-              alt={item.location}
-            />
-            <div className="entry-meta w3-padding-16">
-              <span className="byline ">
-                by&nbsp;
-                <span className="author vcard">
-                  <a className="url fn n" href="/blog">
-                    {item.author}
-                  </a>
-                </span>
-              </span>
-              <span className="posted-on">
-                <span className="posted-on-delimeter"> - </span>
-                <a href="/blog" rel="bookmark">
-                  <time className="entry-date published" dateTime={item.date}>
-                    {item.date}
-                  </time>
-                </a>
-              </span>
-              <h2 className="entry-title">{item.title}</h2>
+    <div id="blogs">
+      <div className="card-container">
+        {blogs.map((item, key) => {
+          return (
+            <div
+              key={key}
+              className="card card-blog"
+              onClick={() => handleClickContinue(item)}
+            >
+              <div className="card-img"></div>
+
+              <img className="card-img-hovered" src={item.thumbnail} />
+
+              <div className="card-info">
+                <div className="card-about">
+                  <a className="card-tag tag-news">{item.location}</a>
+                  <div className="card-time">{item.date}</div>
+                </div>
+                <h1 className="card-title">{item.title}</h1>
+                <div className="card-creator">
+                  by <span>{item.author}</span>
+                </div>
+              </div>
             </div>
-            <div className="text-blog">{item.description}</div>
-            <hr></hr>
-            <div className="entry-footer index-entry">
-              <p>
-                <span
-                  className="meta-nav"
-                  onClick={() => handleClickContinue(item)}
-                >
-                  Continue reading →
-                </span>
-              </p>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

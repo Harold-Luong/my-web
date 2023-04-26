@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { blogs, uniqueTags } from "../../asset/blog-data";
+import { blogs, uniqueTags, locationAndTotals } from "../../asset/blog-data";
 const initialState = {
   filteredBlogs: blogs,
   uniqueTags: uniqueTags,
@@ -8,7 +8,7 @@ const initialState = {
   currentPage: 1,
   perPage: 6,
   totalPage: null,
-  location: "",
+  locations: locationAndTotals(),
 };
 
 const blogsSlice = createSlice({
@@ -25,6 +25,14 @@ const blogsSlice = createSlice({
         state.tagActive = tag;
       }
     },
+    filterBlogsByLoacation: (state, action) => {
+      const location = action.payload;
+      console.log(location);
+      state.filteredBlogs = blogs.filter(
+        (blogs) => blogs.location === location
+      );
+    },
+
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     },
@@ -37,6 +45,6 @@ const blogsSlice = createSlice({
   },
 });
 
-export const { filterBlogsByTag } = blogsSlice.actions;
+export const { filterBlogsByTag, filterBlogsByLoacation } = blogsSlice.actions;
 
 export default blogsSlice.reducer;

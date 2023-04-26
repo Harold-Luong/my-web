@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-
+import React from "react";
 import "./locationBlogs.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { filterBlogsByLoacation } from "../../features/blogs/blogSlice";
 const LocationBlogs = () => {
-  const [count, setCount] = useState(1);
-  const blogs = useSelector((state) => state.blogs.filteredBlogs);
-  const uniqueLocation = blogs.reduce((location, blog) => {
-    return [...new Set([...location, blog.location])];
-  }, []);
+  const dispatch = useDispatch();
+  const locationAndTotals = useSelector((state) => state.blogs.locations);
 
-  console.log(uniqueLocation);
+  const handleClickLocation = (event) => {
+    const locationFilter = event.target.getAttribute("data-location");
+
+    dispatch(filterBlogsByLoacation(locationFilter));
+  };
 
   return (
     <div className=" tags w3-border w3-margin">
@@ -18,12 +19,21 @@ const LocationBlogs = () => {
       </div>
       <div className="w3-container w3-white">
         <ul className="w3-ul">
-          {uniqueLocation.map((item, key) => {
+          {locationAndTotals.map((item, key) => {
             return (
-              <li key={key} id="location" className="w3-display-container ">
-                {item}
-                <span id="count" className="w3-transparent w3-display-right">
-                  {count}
+              <li
+                key={key}
+                id="location"
+                className="w3-display-container "
+                onClick={handleClickLocation}
+                data-location={item.location}
+              >
+                {item.location}
+                <span
+                  id="total"
+                  className=" w3-padding w3-transparent w3-display-right"
+                >
+                  ({item.total})
                 </span>
               </li>
             );

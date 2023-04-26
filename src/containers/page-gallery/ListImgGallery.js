@@ -24,7 +24,7 @@ const ListImgGallery = () => {
         <ul className="ul-image-gallery">
           {imageGallery.map((item, key) => (
             <li key={key} className={`li-img ${setShow ? "show" : ""} `}>
-              <img src={item.src} alt={item.location} />
+              <img src={item.thumbnail} alt={item.location} />
               <div className="overlay" onClick={() => handleShow(item)}>
                 <span>{item.location} </span>
               </div>
