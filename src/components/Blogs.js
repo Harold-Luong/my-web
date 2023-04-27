@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import "./blogs.scss";
+// import "./blogs.scss";
 import TagsFilter from "../constants/TagsFilter";
 import LocationBlogs from "../containers/page-blog/LocationBlogs";
 // import PaginationBar from "../containers/page-gallery/PaginationBar";
@@ -22,8 +22,8 @@ const Blogs = () => {
               <CardBlog />
             </Col>
             <Col md={4} xs={12}>
-              <LocationBlogs />
               <TagsFilter />
+              <LocationBlogs />
             </Col>
           </Row>
         </>

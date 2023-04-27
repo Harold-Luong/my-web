@@ -1,0 +1,100 @@
+#blogs {
+  $my-transition: all 0.3s ease-in-out;
+
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+
+  @media (min-width: 30em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 60em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-item {
+    padding: 3px;
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    filter: grayscale(100%);
+    // sets up hover state
+    position: relative;
+    top: 0;
+    border: solid 1px transparent;
+    transition: $my-transition;
+    &:hover {
+      transform: scale(1.03);
+      filter: grayscale(0%);
+      border: solid 1px rgba(246, 60, 78, 0.7);
+    }
+
+    article {
+      padding: 0.7em;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 20px;
+        text-align: justify;
+        letter-spacing: normal;
+        color: #333;
+      }
+      a {
+        text-align: right;
+        color: #333;
+        text-decoration: none;
+        font-family: "Josefin Slab", serif;
+        font-size: 0.75rem;
+        transition: $my-transition;
+        padding: 5px;
+        &:hover {
+          color: rgba(246, 60, 78, 0.7);
+        }
+      }
+
+      p {
+        line-height: 1.4;
+        // text-align: justify;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      span {
+        width: auto;
+        text-align: right;
+        font-size: 12px;
+        font-weight: bold;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 1em 0 0 0;
+        cursor: pointer;
+        transition: $my-transition;
+        &:hover {
+          color: rgba(246, 60, 78, 0.7);
+        }
+      }
+    }
+    .thumb {
+      padding-bottom: 60%;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+}

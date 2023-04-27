@@ -3,7 +3,8 @@ const blogs = [
     id: 1,
     location: "Tây Ninh",
     title: "Chùa Bà Đen",
-    description: "Kiến trúc đẹp của chùa Bà Đen ở Tây Ninh",
+    description:
+      "Kiến trúc đẹp của chùa Bà Đen ở Tây Ninh, Đảo Phú Quý có nhiều bãi tắm đẹp và nơi đây cũng là nơi đáp xuống của nhiều loài chim di cư vào mùa đông.",
     thumbnail: "https://picsum.photos/id/1044/500/300",
     date: "20/05/2022",
     author: "Nguyễn Văn A",
@@ -14,7 +15,8 @@ const blogs = [
     id: 2,
     location: "Phú Yên",
     title: "Bãi Xep",
-    description: "Nơi đầy nắng và gió.",
+    description:
+      "Đảo Phú Quý có nhiều bãi tắm đẹp và nơi đây cũng là nơi đáp xuống của nhiều loài chim di cư vào mùa đông.",
     thumbnail: "https://picsum.photos/id/1011/500/300",
     date: "05/06/2022",
     author: "Nguyễn Thị B",
@@ -86,12 +88,12 @@ const blogs = [
     location: "Nha Trang",
     title: "Tháp Bà Ponagar ",
     description:
-      "Tháp Bà Ponagar là một di tích lịch sử văn hóa của người Chăm, được xây dựng từ thế kỷ VII đến thế kỷ XII.",
+      "Tháp Bà Ponagar là một di tích lịch sử văn hóa của người Chăm, được xây dựng từ thế kỷ VII đến thế kỷ XII.  ",
     thumbnail: "https://picsum.photos/id/1035/500/300",
     date: "01/09/2022",
     author: "Nguyễn Văn B",
     category: "Du lịch tâm linh",
-    tags: ["Tháp Bà Ponagar", "Di tích lịch sử"],
+    tags: ["Du lịch tâm linh", "Di tích lịch sử"],
   },
   {
     id: 9,
